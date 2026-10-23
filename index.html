@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Website</title>
+    <style>
+        body {
+            background-color: #101827;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+    color: #63c7ff;
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+img{
+    width: 80%;
+    max-width: 900px;
+    height: auto;
+    margin-top: 20px;
+    display: block;
+    margin: 20px auto;
+}
+.description {
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.8;
+    font-size: 18px;
+}
+nav{
+    background-color: #1b2940;
+    padding: 20px;
+    margin-bottom:30px ;
+    border-radius:10px ;
+}
+nav a{
+    color:#63c7ff;
+    text-decoration: none;
+    margin:0 15px;
+    font-size:18px;
+}
+nav a:hover{
+    color:white;
+}
+footer {
+    background-color: #1b2940;
+    padding: 20px;
+    margin-top:40px ;
+    font-size: 14px;
+    color: #b8c7dc;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+}
+
+img:hover {
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+button {
+    background-color: #63c7ff;
+    color: #101827;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+}
+
+#clock {
+    color: #63c7ff;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px 0 30px;
+}
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#universe">The Universe</a>
+    <a href="#about">About</a>
+</nav>
+<p id="clock"></p>
+    <h1 id="home">Exploring the Cosmos</h1>
+    <p>Welcome to my journey through space and cosmology.</p>
+  <img src="galaxy.jpg" alt="A distant galaxy"> 
+  <h2 id="universe">The wonders of the universe</h2> 
+  <p class="description">
+    Galaxies contain billions of stars, clouds of gas, and cosmic dust.
+    Across the universe, these enormous structures reveal the history
+    and evolution of the cosmos.
+</p>
+<section id="about">
+    <h2>About this website</h2>
+<p class="description">
+    This website explores the universe, galaxies, stars, planets, and the physics that helps us understand the cosmos
+</p>
+<button onclick="showSpaceFact()">Reveal a Space Fact</button>
+<p id="space-fact"></p>
+</section>
+<footer>
+    <p>Exploring the cosmos | Discover the universe </p>
+    <p>&copy; 2026 My First Website</p>
+</footer>
+<script>
+    
+function showSpaceFact() {
+    const facts = [
+        "A day on Venus is longer than its year!",
+        "Light from the Sun takes about 8 minutes to reach Earth.",
+        "Neutron stars are incredibly dense.",
+        "The Milky Way contains billions of stars.",
+        "Saturn's rings are made mostly of ice and rocky particles."
+    ];
+
+    const randomIndex = Math.floor(Math.random() * facts.length);
+
+    document.getElementById("space-fact").textContent =
+        facts[randomIndex];
+}
+
+function updateClock() {
+    const now = new Date();
+
+    document.getElementById("clock").textContent =
+        now.toLocaleTimeString();
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+
+</script>
+
+</body>
+</html>
